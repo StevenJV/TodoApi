@@ -69,7 +69,7 @@ app.MapDelete("/todoitems/{id}", async (int id, TodoDb db) =>
 
 app.Run();
 
-class Todo
+public class Todo
 {
   public int Id { get; set; }
   public string? Name { get; set; }
@@ -91,7 +91,7 @@ public class TodoItemDTO
   public string? Name { get; set; }
   public bool IsComplete { get; set; }
 
-  public TodoItemDTO() { }
+
   public TodoItemDTO(Todo todoItem) =>
   (Id, Name, IsComplete) = (todoItem.Id, todoItem.Name, todoItem.IsComplete);
 }
